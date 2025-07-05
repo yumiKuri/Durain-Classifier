@@ -12,7 +12,7 @@ def load_model():
     return tf.keras.models.load_model("xcep_test.h5")
 
 model = load_model()
-class_names = ["Ripe", "Young"]  # Adjust based on your training
+class_names = ["Mature", "Young"]  # Adjust based on your training
 
 # Preprocess image
 def preprocess_image(image: Image.Image):
