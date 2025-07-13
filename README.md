@@ -5,8 +5,8 @@ This website is built with Streamlit and deployed on Streamlit Cloud. I choose t
 
 
 **Features**
-- Upload durian images for classificationTake a photo for classification
-- Both will give a prediction result after pressing a button.
+Upload/Take a photo of durian images for classification with a percentage of confidence in a result.  
+Both methods will give a prediction result after pressing a button.
 
 **Tech Stack**  
 - Frontend & Deployment: Streamlit  
