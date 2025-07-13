@@ -25,9 +25,11 @@ def preprocess_image(image: Image.Image):
 # Predict
 def predict(image):
     input_tensor = preprocess_image(image)
-    prediction = model.predict(input_tensor)
-    result = class_names[np.argmax(prediction)]
-    return result
+    prediction = model.predict(input_tensor)[0]  # Get the first (and only) prediction vector
+    predicted_index = np.argmax(prediction)
+    confidence = prediction[predicted_index]     # Get the confidence of the predicted class
+    result = class_names[predicted_index]
+    return result, confidence
 
 # UI
 st.markdown("<h1 style='text-align: center;'>🥥 Durian Maturity Classifier</h1>", unsafe_allow_html=True)
@@ -54,5 +56,5 @@ with tab2:
 if image:
     st.image(image, caption="📷 Selected durian image", use_container_width=True)
     if st.button("🔍 Predict Maturity"):
-        result = predict(image)
-        st.success(f"✅ **Prediction:** {result}")
+        result, confidence = predict(image)
+        st.success(f"✅ **Prediction:** {result} ({confidence*100:.2f}%)")
