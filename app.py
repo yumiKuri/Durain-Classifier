@@ -32,8 +32,8 @@ def predict(image):
     return result, confidence
 
 # UI
-st.markdown("<h1 style='text-align: center;'>🥥 Durian Maturity Classifier</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center;'>Take a photo or upload one to predict if your durian is ready! 🍈</p>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'>Durian Maturity Classifier</h1>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center;'>Take a photo or upload one to predict if your durian is ready!</p>", unsafe_allow_html=True)
 
 # Create tabs for Camera and Upload
 tab1, tab2 = st.tabs(["📸 Camera", "🖼️ Upload Image"])
