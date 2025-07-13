@@ -4,7 +4,7 @@ A simple Streamlit web app for classifying durian images using a pre-trained ML 
 This website is built with Streamlit and deployed on Streamlit Cloud. I choose this tool because it allows me to create a easy UI integrating with a tensorflow model of my friend.  
 
 
-**Features**
+**Features**  
 Upload/Take a photo of durian images for classification with a percentage of confidence in a result.  
 Both methods will give a prediction result after pressing a button.
 
