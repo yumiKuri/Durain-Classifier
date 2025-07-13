@@ -4,7 +4,7 @@ import numpy as np
 import tensorflow as tf
 
 # Setup layout
-st.set_page_config(page_title="Durian Maturity Detector", page_icon="🥥", layout="centered")
+st.set_page_config(page_title="Durian Maturity Detector", page_icon="🌳", layout="centered")
 
 # Load model
 @st.cache_resource
