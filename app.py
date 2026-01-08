@@ -58,3 +58,24 @@ if image:
     if st.button("🔍 Predict Maturity"):
         result, confidence = predict(image)
         st.success(f"✅ **Prediction:** {result} ({confidence*100:.2f}%)")
+
+        #Add receiving feedback feature
+        
+        st.write("Was the prediction correct?")
+        fb_col1, fb_col2 = st.columns(2)
+
+        if fb_col1.button("Yes"):
+            st.session_state.setdefault("correct_count", 0)
+            st.session_state["correct_count"] += 1
+
+        if fb_col2.button("No"):
+            st.session_state.setdefault("wrong_count", 0)
+            st.session_state["wrong_count"] += 1
+
+        # Show simple accuracy stats
+        correct = st.session_state.get("correct_count", 0)
+        wrong = st.session_state.get("wrong_count", 0)
+        total = correct + wrong
+        if total > 0:
+            st.info(f"User-verified accuracy: **{correct}/{total} ({correct/total*100:.1f}%)**")
+
